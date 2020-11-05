@@ -53,6 +53,7 @@ Some interesting issues crop up in this code:
         https://www.youtube.com/watch?v=INn3xa4pMfg
   Bottom line is everything the factory builds is known at compile time and the internal unordered_map<> should not change during runtime.
   Note this is really a compile time reflection problem :^)
+  One last thing.  Unfortunately std::any_cast<> does not support polymorphic coversion.  This would also have solved a bunch of issues.
    
 Singleton is a note for me on using std::weak_ptr<>.  The use semantics are a bit different than the other smart pointers (ie. lock()).
 The idea is to have a factory that is destructed once the user is done with it.  Obviously for 
